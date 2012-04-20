@@ -1,0 +1,16 @@
+{
+	"name" : "Chromies",
+	"version" : "0.0.1",
+	"description" : "A web based operating system that utilizes the html 5 technology to improve your computer experience.",
+	"browser_action" : {"default_icon" : "system/resource/images/logosmall.png", "default_title":"Stack OS" },
+        "icons": {"128": "system/resource/images/logo128.png","48": "system/resource/images/logo128.png" },
+	"background_page" : "system/kernel/background.html",
+	"permissions": [ "cookies", "tabs", "*://*/*", "unlimitedStorage"],
+    "content_scripts": [
+        {
+          "matches": ["*://*/*"],
+          "js": ["system/kernel/lib/jquery.1.7.2.min.js"],
+          "all_frames": true
+        }
+    ]
+}
